@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<a href={% url "app_todo_v02:create_task" %}>Create New</a>
+
+    {% if tasks %}
+
+    {% for task in tasks %}
+        <h1>
+            {% comment %} <a href="{#{ task.get_absolute_url }#}"> {% endcomment %}
+                <a href="{% url 'app_todo_v02:detail_task' pk=task.pk %}">
+            {{ task.title }}
+        </a></h1>
+        <p>{{ task.body|truncatechars:50 }}</p>
+    {% endfor %}
+
+    {% endif %}
+
+{% endblock %}

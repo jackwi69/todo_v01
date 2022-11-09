@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>
+        <a href="{% url 'app_todo_v02:update_task' pk=task.pk %}">
+        {{ task.title }}
+    </a></h1>
+    <p>{{ task.body }}</p>
+
+{% endblock %}
