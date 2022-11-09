@@ -122,3 +122,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# https://pypi.org/project/django-on-heroku/
+# pip install django-on-heroku
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
